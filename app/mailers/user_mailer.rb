@@ -3,7 +3,7 @@ class UserMailer < ApplicationMailer
  
   def order_confirmation_email(order)
     @order = order
-    @url  = 'http://localhost:3000/orders/3'
-    mail(to: @order.email, subject: 'Thank you for ordering from Jungle!')
+    @url  = 'http://localhost:3000/orders/#{order.id}'
+    mail(to: @order.email, subject: 'Order Confirmation for order #{order.id}')
   end
 end
